@@ -36,7 +36,7 @@ class Balanceamento(BaseEstimator, TransformerMixin):
     def fit(self, X, y):
         return self
     
-    def transform(self, X, y):
+    def transform(self):
        
         # Instanciando o SMOTE
         nr = SMOTE()
