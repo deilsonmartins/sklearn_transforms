@@ -7,21 +7,21 @@ class DropColumns(BaseEstimator, TransformerMixin):
     def __init__(self, columns):
         self.columns = columns
 
-    def fit(self, X, y=None):
+    def fit(self, X, y):
         return self
 
-    def transform(self, X):
+    def transform(self, X, y):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
-        return data.drop(labels=self.columns, axis='columns')
+        return data.drop(labels=self.columns, axis='columns'), y
 
 class ADDColumns(BaseEstimator, TransformerMixin):
 
-    def fit(self, X, y=None):
+    def fit(self, X, y):
         return self
 
-    def transform(self, X):
+    def transform(self, X, y):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
 
@@ -29,14 +29,14 @@ class ADDColumns(BaseEstimator, TransformerMixin):
         data['H_AULA_PRES/FALTAS'] = round(data['H_AULA_PRES'] / data['FALTAS'], 3)
 
         # Retornamos um novo dataframe 
-        return data
+        return data, y
  
 class Balanceamento(BaseEstimator, TransformerMixin):
   
     def fit(self, X, y):
         return self
     
-    def transform(self):
+    def transform(self, X, y):
        
         # Instanciando o SMOTE
         nr = SMOTE()
