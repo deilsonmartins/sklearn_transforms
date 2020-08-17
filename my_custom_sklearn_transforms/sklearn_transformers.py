@@ -7,10 +7,10 @@ class DropColumns(BaseEstimator, TransformerMixin):
     def __init__(self, columns):
         self.columns = columns
 
-    def fit(self, X, y):
+    def fit(self, X, y=None):
         return self
 
-    def transform(self, X, y):
+    def transform(self, X, y=None):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
@@ -20,10 +20,10 @@ class DropColumns(BaseEstimator, TransformerMixin):
 
 class ADDColumns(BaseEstimator, TransformerMixin):
 
-    def fit(self, X, y):
+    def fit(self, X, y=None):
         return self
 
-    def transform(self, X, y):
+    def transform(self, X, y=None):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
 
