@@ -14,7 +14,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
-        return data.drop(labels=self.columns, axis='columns'), y
+        return data.drop(labels=self.columns, axis='columns')
 
 class ADDColumns(BaseEstimator, TransformerMixin):
 
@@ -29,7 +29,7 @@ class ADDColumns(BaseEstimator, TransformerMixin):
         data['H_AULA_PRES/FALTAS'] = round(data['H_AULA_PRES'] / data['FALTAS'], 3)
 
         # Retornamos um novo dataframe 
-        return data, y
+        return data
  
 class Balanceamento(BaseEstimator, TransformerMixin):
   
