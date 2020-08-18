@@ -36,7 +36,7 @@ class ADDColumns(BaseEstimator, TransformerMixin):
 
 class Balancing(BaseEstimator, TransformerMixin):
     
-    def fit(self, X, y):
+    def fit_transform(self, X, y):
         
         #Instanciando uma transformação ADDColumns Balanceamento
         balancing = SMOTE()
@@ -44,7 +44,4 @@ class Balancing(BaseEstimator, TransformerMixin):
         new_x, new_y = balancing.fit_resample(X, y)
         
         return new_x, new_y
-        
-    def transform(self, X):
-       pass
-        
+ 
