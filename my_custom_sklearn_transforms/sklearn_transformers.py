@@ -35,18 +35,11 @@ class ADDColumns(BaseEstimator, TransformerMixin):
  
 
 class Balancing(object):
+    
     def __init__(self):
         pass
 
     def fit(self, X, y):
-        
-        return self
-    
-    def transform(self, tupla):
-        
-        print(tupla[0].shape)
-        print(tupla[1].shape)
-        print(tupla[2].shape)
         
         #Instanciando SMOTE
         balancing = SMOTE()
@@ -54,3 +47,5 @@ class Balancing(object):
         new_x, new_y = balancing.fit_resample(X, y)
         
         return new_x, new_y
+    
+       
