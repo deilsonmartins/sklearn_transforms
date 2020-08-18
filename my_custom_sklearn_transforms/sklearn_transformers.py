@@ -1,4 +1,5 @@
 from sklearn.base import BaseEstimator, TransformerMixin
+from imblearn.over_sampling import SMOTE
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
@@ -33,3 +34,16 @@ class ADDColumns(BaseEstimator, TransformerMixin):
         return data
  
 
+class Balancing(object):
+    
+    def fit(self, X, y):
+        
+        #Instanciando uma transformação ADDColumns Balanceamento
+        balancing = SMOTE()
+        
+        new_x, new_y = balancing.fit_resample(X, y)
+        
+        return new_x, new_y
+        
+        
+        
