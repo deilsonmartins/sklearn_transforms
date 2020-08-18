@@ -44,7 +44,7 @@ class Balancing(object):
     
     def transform(self, tupla):
         
-        X, y = tupla
+        print(tupla)
         
         #Instanciando SMOTE
         balancing = SMOTE()
