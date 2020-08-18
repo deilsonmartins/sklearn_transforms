@@ -46,6 +46,7 @@ class Balancing(object):
         
         print(tupla[0].shape)
         print(tupla[1].shape)
+        print(tupla[2].shape)
         
         #Instanciando SMOTE
         balancing = SMOTE()
