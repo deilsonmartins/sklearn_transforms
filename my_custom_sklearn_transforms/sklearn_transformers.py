@@ -46,5 +46,5 @@ class Balancing(BaseEstimator, TransformerMixin):
         return new_x, new_y
         
     def transform(self, X):
-        return pass
+       pass
         
