@@ -34,7 +34,7 @@ class ADDColumns(BaseEstimator, TransformerMixin):
         return data
  
 
-class Balancing(object):
+class Balancing(BaseEstimator, TransformerMixin):
     
     def fit(self, X, y):
         
