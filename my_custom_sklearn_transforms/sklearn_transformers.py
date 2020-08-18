@@ -40,6 +40,10 @@ class Balancing(object):
 
     def fit(self, X, y):
         
+        return self
+    
+    def transform(self, X, y):
+        
         #Instanciando SMOTE
         balancing = SMOTE()
         
