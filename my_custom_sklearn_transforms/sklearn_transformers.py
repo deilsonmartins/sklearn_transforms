@@ -34,14 +34,15 @@ class ADDColumns(BaseEstimator, TransformerMixin):
         return data
  
 
-class Balancing(BaseEstimator, TransformerMixin):
-    
-    def fit_transform(self, X, y):
+class Balancing(object):
+    def __init__(self):
+        pass
+
+    def fit(self, X, y):
         
-        #Instanciando uma transformação ADDColumns Balanceamento
+        #Instanciando SMOTE
         balancing = SMOTE()
         
         new_x, new_y = balancing.fit_resample(X, y)
         
         return new_x, new_y
- 
