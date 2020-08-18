@@ -42,7 +42,9 @@ class Balancing(object):
         
         return self
     
-    def transform(self, X, y):
+    def transform(self, tupla):
+        
+        X, y = tupla
         
         #Instanciando SMOTE
         balancing = SMOTE()
